@@ -8,11 +8,7 @@
   <li>
     {{burger_name}}
 
-    {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-      {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-    </button> --}}
-
-    <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+    <button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
   </li>
   {{/unless}}
   {{/each}}
@@ -20,17 +16,11 @@
 
 <h2>Burgers that are devoured!</h2>
 
-<ul>
+<ul style="list-style-type: none;">
   {{#each burgers}}
   {{#if devoured}}
   <li>
     {{burger_name}}
-
-{{!--     <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-      {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-    </button> --}}
-
-    <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
   </li>
   {{/if}}
   {{/each}}
@@ -45,7 +35,7 @@
   </div>
 
   <div class="form-group">
-    <label for="sleepy"><br><strong>Devoured?</strong></label><br>
+    <label for="devoured"><br><strong>Devoured?</strong></label><br>
     <input type="radio" name="devoured" value="1" checked> Devoured!<br>
     <input type="radio" name="devoured" value="0"> Available
   </div><br><br>
