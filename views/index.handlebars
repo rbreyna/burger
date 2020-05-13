@@ -4,9 +4,17 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      <h3>{{burger.burger_name}}</h3>
-    {{/unless}}
+  {{#unless devoured}}
+  <li>
+    {{burger_name}}
+
+    {{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+      {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+    </button> --}}
+
+    <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+  </li>
+  {{/unless}}
   {{/each}}
 </ul>
 
@@ -14,9 +22,17 @@
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
-       <h3>{{burger.burger_name}}</h3>
-    {{/if}}
+  {{#if devoured}}
+  <li>
+    {{burger_name}}
+
+{{!--     <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+      {{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+    </button> --}}
+
+    <button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+  </li>
+  {{/if}}
   {{/each}}
 </ul>
 
