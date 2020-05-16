@@ -1,12 +1,8 @@
-drop database if exists burgers_db;
-create database burgers_db;
+INSERT into burgers (burger_name, devoured)
+VALUES ("Big Mac", 0);
 
-use burgers_db;
+INSERT into burgers (burger_name, devoured)
+VALUES ("Bacon Cheeseburger", 0);
 
-drop table if exists burgers;
-create table burgers(
-	id int auto_increment not null,
-    burger_name varchar(100) not null,
-    devoured boolean not null,
-    primary key(id)
-)
+INSERT into burgers (burger_name, devoured)
+VALUES ("Baconator", 0);
