@@ -1,44 +1,62 @@
-<h1>Eat the burger!!</h1>
-
-<h2>Burgers that are available!</h2>
-
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>
-    {{burger_name}}
-
-    <button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that are devoured!</h2>
-
-<ul style="list-style-type: none;">
-  {{#each burgers}}
-  {{#if devoured}}
-  <li>
-    {{burger_name}}
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name"><br>
+<div class="container">
+  <div class="jumbotron bg-dark text-light jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Eat Da Burger! 🍔</h1>
+      <p class="lead">Add a burger you'd like to eat later or devour one from the list!</p>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <label for="devoured"><br><strong>Devoured?</strong></label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Available
-  </div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>Burgers that are available!</h3>
 
-  <button type="submit">Add Burger</button>
-</form>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>
+          {{burger_name}}
+
+          <button type="button" class="devour-burger btn btn-info" data-id="{{this.id}}"
+            style="margin-bottom: 2px;">DEVOUR!</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-6">
+      <h3>Burgers that are devoured!</h3>
+
+      <ul style="list-style-type: none;">
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="name"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="devoured"><br><strong>Devoured?</strong></label><br>
+      <input type="radio" name="devoured" value="0" checked> Available<br>
+      <input type="radio" name="devoured" value="1"> Devoured!
+    </div><br><br>
+
+    <button type="submit" class="btn btn-dark">Add Burger</button>
+  </form>
+</div>
+</div>
